@@ -1,9 +1,7 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import Register from '@/components/auth/login/Register'
 export default function RegisterScreen() { 
     return (
-    <View>
-        <Text>Register</Text>
-    </View>
+        <Register />
     )
 }
