@@ -3,11 +3,11 @@ import { StyleSheet } from 'react-native';
 
 
 export const commonStyles = StyleSheet.create({
-  title : {
+  title: {
     fontSize: 45,
     fontWeight: 'bold',
     color: '#1d4ed8',
-    textAlign:'center'
+    textAlign: 'center'
   },
   container: {
     // flex: 1,
@@ -15,7 +15,7 @@ export const commonStyles = StyleSheet.create({
     alignItems: 'stretch',        // center children horizontally
     justifyContent: 'flex-start',
     flexDirection: 'column',
-    width: '100%',  
+    width: '100%',
 
   },
   inputWrapper: {
@@ -40,7 +40,7 @@ export const commonStyles = StyleSheet.create({
     fontWeight: '600',
   },
   fancyButton: {
-    
+
     backgroundColor: '#1d4ed8',
     borderRadius: 12,
     paddingVertical: 14,
@@ -53,5 +53,18 @@ export const commonStyles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 8,
     elevation: 6, // Android shadow
+  },
+  iconShadow: {
+    backgroundColor: '#93c5fd',
+    borderRadius: 85,
+    padding: 15,
+    marginBottom: 20,
+    // Shadow for iOS
+    shadowColor: '#8b5cf6', // purple
+    shadowOffset: { width: 0, height: 20 }, // bigger shadow
+    shadowOpacity: 0.35, // more visible
+    shadowRadius: 26, // bigger shadow
+    // Shadow for Android
+    elevation: 20, // higher value for bigger shadow
   }
 });
