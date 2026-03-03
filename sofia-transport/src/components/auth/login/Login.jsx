@@ -1,9 +1,10 @@
 import React from 'react';
 import { View, Text, TextInput, TouchableOpacity } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-
+import { useNavigation } from '@react-navigation/native'; 
 
 export default function LoginScreen() {
+    const navigation =  useNavigation();
 
     function signIn() {
 
@@ -30,7 +31,7 @@ export default function LoginScreen() {
                 </View>
                 <Text numberOfLines={1} style={global.commonStyles.title}>Sofia Transport</Text>
             </View>
-            <View style={[global.commonStyles.inputWrapper, { marginLeft: 20, gap: 15 }]}>
+            <View style={[global.commonStyles.inputWrapper, { marginLeft: 20, gap: 15, backgroundColor: 'white', padding: 20, borderRadius: 35 }]}>
                 <View>
                     <Text style={global.commonStyles.inputLabel}>Email</Text>
                     <TextInput
@@ -57,6 +58,18 @@ export default function LoginScreen() {
                             Sign In
                         </Text>
                     </TouchableOpacity>
+                </View>
+
+                <View>
+                    <Text>
+                        Don't have an account?{' '}
+                        <Text
+                            style={{ color: '#1d4ed8', fontWeight: 'bold' }}
+                            onPress={() => navigation.navigate('Register')}
+                        >
+                            Create Account
+                        </Text>
+                    </Text>
                 </View>
             </View>
         </View>
