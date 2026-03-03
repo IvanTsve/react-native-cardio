@@ -39,4 +39,19 @@ export const commonStyles = StyleSheet.create({
     color: '#1d4ed8',            // main blue
     fontWeight: '600',
   },
+  fancyButton: {
+    
+    backgroundColor: '#1d4ed8',
+    borderRadius: 12,
+    paddingVertical: 14,
+    paddingHorizontal: 24,
+    marginVertical: 15,
+    alignItems: 'center',
+    justifyContent: 'center',
+    shadowColor: '#8b5cf6', // purple shadow like the logo
+    shadowOffset: { width: 0, height: 8 },
+    shadowOpacity: 0.25,
+    shadowRadius: 8,
+    elevation: 6, // Android shadow
+  }
 });

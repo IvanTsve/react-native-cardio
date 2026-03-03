@@ -1,15 +1,18 @@
 import React from 'react';
-import { View, Text, TextInput } from 'react-native';
-
+import { View, Text, TextInput, TouchableOpacity } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import { ImageBackground } from 'react-native-web';
 
 
 export default function LoginScreen() {
 
+    function signIn() {
+
+
+    }
+
     return (
         <View style={global.commonStyles.container}>
-            <View style={{ alignItems: 'center', marginTop: 40, marginBottom:20 }}>
+            <View style={{ alignItems: 'center', marginTop: 40, marginBottom: 20 }}>
                 <View style={{
                     backgroundColor: '#93c5fd',
                     borderRadius: 85,
@@ -44,6 +47,16 @@ export default function LoginScreen() {
                         placeholderTextColor="#93c5fd"
                         style={global.commonStyles.input}
                     />
+                </View>
+                <View >
+                    <TouchableOpacity
+                        style={global.commonStyles.fancyButton}
+                        onPress={signIn}
+                    >
+                        <Text style={{ color: 'white', fontWeight: '600', fontSize: 16 }}>
+                            Sign In
+                        </Text>
+                    </TouchableOpacity>
                 </View>
             </View>
         </View>
