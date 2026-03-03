@@ -14,19 +14,7 @@ export default function LoginScreen() {
     return (
         <View style={global.commonStyles.container}>
             <View style={{ alignItems: 'center', marginTop: 40, marginBottom: 20 }}>
-                <View style={{
-                    backgroundColor: '#93c5fd',
-                    borderRadius: 85,
-                    padding: 15,
-                    marginBottom: 20,
-                    // Shadow for iOS
-                    shadowColor: '#8b5cf6', // purple
-                    shadowOffset: { width: 0, height: 20 }, // bigger shadow
-                    shadowOpacity: 0.35, // more visible
-                    shadowRadius: 26, // bigger shadow
-                    // Shadow for Android
-                    elevation: 20, // higher value for bigger shadow
-                }}>
+                <View style={global.commonStyles.iconShadow}>
                     <MaterialCommunityIcons name="bus" size={150} color="#1d4ed8" />
                 </View>
                 <Text numberOfLines={1} style={global.commonStyles.title}>Sofia Transport</Text>
