@@ -10,7 +10,7 @@ export const commonStyles = StyleSheet.create({
     textAlign: 'center'
   },
   container: {
-    // flex: 1,
+    flex: 1,
     // backgroundColor: '#fff',
     alignItems: 'stretch',        // center children horizontally
     justifyContent: 'flex-start',
