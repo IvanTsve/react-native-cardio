@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, TextInput, TouchableOpacity, ScrollView } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
-export default function RegisterScreen() {
+export default function Register() {
   function register() {
     // TODO: call your API here
   }
