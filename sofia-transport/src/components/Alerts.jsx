@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import AlertsService from '@/services/Alerts';
+import AlertsService from '@/services/apiAlerts';
 import { useEffect, useState } from 'react';
 
 export default function Alerts() {
