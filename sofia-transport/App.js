@@ -11,7 +11,7 @@ global.commonStyles = CommonStyles.commonStyles;
 export default function App() {
   return (
     <View style={[global.commonStyles.container, {backgroundColor: '#c3c4c7'}]}>
-      <StatusBar style="auto" /> 
+      {/* <StatusBar style="auto" />  */}
       <RootNavigator />
     </View>
   );
