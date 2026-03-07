@@ -1,7 +1,8 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { ScrollView, Text } from 'react-native';
 import AlertsService from '@/services/apiAlerts';
 import { useEffect, useState } from 'react';
+import RenderHTML from 'react-native-render-html';
 
 export default function Alerts() {
     const [alertsArr, setAlertsArr] = useState([]);
@@ -10,19 +11,33 @@ export default function Alerts() {
     }, [])
 
     async function fetchAlerts() {
-        let ignore = false;
-        setAlertsArr([]);
         const r = await AlertsService.getAlerts();
-        if (!ignore) {
-            setAlertsArr(r.data);
-        }
-        return () => {
-            ignore = true;
-        };
+
+        const text = typeof r.data === "string" ? r.data : String(r.data);
+
+        const matches = [...text.matchAll(/<p[\s\S]*?<\/p>/g)];
+
+        const alerts = matches.map((m, i) => ({
+            id: i,
+            html: m[0]
+        }));
+
+        setAlertsArr(alerts);
     }
     return (
-        <View>
-            <Text>{JSON.stringify(alertsArr)}</Text>
-        </View>
+        <ScrollView>
+            {alertsArr.length == 0 ? <Text>No alerts</Text> : alertsArr.map((alert, index) => (
+                <RenderHTML
+                    key={index}
+                    contentWidth={100}
+                    source={{ html: alert.html }}
+                    tagsStyles={{
+                        p: { fontSize: 16, marginBottom: 10 },
+                        span: { fontSize: 14 },
+                        strong: { fontWeight: 'bold' },
+                    }}
+                />
+            ))}
+        </ScrollView>
     )
 }
